@@ -1,0 +1,18 @@
+{
+  "name": "AfterCaster",
+  "version": "0.0.1",
+  "main": "app/index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-all-unstable": "1.1.5"
+  },
+  "devDependencies": {
+  }
+}
