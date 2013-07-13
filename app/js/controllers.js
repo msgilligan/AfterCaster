@@ -3,9 +3,9 @@
 /* Controllers */
 
 angular.module('myApp.controllers', ['myApp.services']).
-  controller('BlockListCtrl', ['$scope', 'BlockChain', function($scope, BlockChain) {
+  controller('BlockListCtrl', ['$scope', 'Block', function($scope, Block) {
     $scope.blocks = [];
-	$scope.blockchain = BlockChain.query([], function(bc) {
+	$scope.blockchain = Block.query([], function(bc) {
 	    for(var i=0; i<bc.blocks.length; i++) {
 	        $scope.blocks.push(bc.blocks[i]);
 	    } 
