@@ -2,7 +2,7 @@
 
 /* Services */
 
-angular.module('myApp.services', ['ngResource']).
+angular.module('ac.services', ['ngResource']).
   value('version', '0.1').
   factory('Block', function($resource) {
     var Block = $resource('http://www.corsproxy.com/blockchain.info/rawblock/:hash',

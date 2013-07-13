@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', ['myApp.services']).
+angular.module('ac.controllers', ['ac.services']).
   controller('BlockListCtrl', ['$scope', 'Block', function($scope, Block) {
     $scope.blocks = [];
 	$scope.blockchain = Block.query([], function(bc) {
