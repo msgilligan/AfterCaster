@@ -1,1 +1,3 @@
-<p>This is the partial for view 1.</p>
+<ul id="blocks" title="Blocks">
+  <li ng-cloak ng:repeat="block in blocks"><a href="#/block/{{block.hash}}">height:{{block.height}} time:{{block.time}}</a></li>
+</ul>

@@ -1,5 +1,21 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div id="detail" title="Detail">
+  <dl>
+    <dt>hash</dt>
+    <dd>{{block.hash}}</dd>
+    <dt>index</dt>
+    <dd>{{block.block_index}}</dd>
+    <dt>height</dt>
+    <dd>{{block.height}}</dd>
+    <dt>time</dt>
+    <dd>{{block.time}}</dd>
+    <dt>fee</dt>
+    <dd>{{block.fee}}</dd>
+    <dt>IP</dt>
+    <dd>{{block.relayed_by}}</dd>
+    <dt># of tx</dt>
+    <dd>{{block.n_tx}}</dd>
+  </dl>
+  <ul id="txs">
+    <li ng:repeat="tx in block.tx"><a href="#/tx/{{tx.hash}}">size: {{tx.size}} in: {{tx.inputs.length}} out: {{tx.out.length}}</a></li>
+  </ul>
+</div>
