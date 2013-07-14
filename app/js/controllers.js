@@ -11,7 +11,20 @@ angular.module('ac.controllers', ['ac.services']).
 	    } 
 	}, function() {
 	});
-  }])
-  .controller('BlockDetailCtrl', ['$scope', '$routeParams', 'Block', function($scope, $routeParams, Block) {
+  }]).
+  controller('LatestBlockCtrl', ['$scope', 'Block', function($scope, Block) {
+    $scope.blocks = [];
+	$scope.latest = Block.latest([], function(block) {
+	    $scope.blocks.push(block);
+	}, function() {
+	});
+  }]).
+  controller('BlockDetailCtrl', ['$scope', '$routeParams', 'Block', function($scope, $routeParams, Block) {
 	$scope.block = Block.get({hash: $routeParams.hash});
+  }]).
+  controller('TxDetailCtrl', ['$scope', '$routeParams', 'Tx', function($scope, $routeParams, Tx) {
+	$scope.tx = Tx.get({hash: $routeParams.hash});
+  }]).
+  controller('AddrDetailCtrl', ['$scope', '$routeParams', 'Addr', function($scope, $routeParams, Addr) {
+	$scope.addr = Addr.get({addr: $routeParams.addr});
   }]);

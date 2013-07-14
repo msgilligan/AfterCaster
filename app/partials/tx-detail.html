@@ -1,0 +1,18 @@
+<div id="tx-detail" title="Tx Detail">
+  <dl>
+    <dt>hash</dt>
+    <dd>{{tx.hash}}</dd>
+    <dt>index</dt>
+    <dd>{{tx.tx_index}}</dd>
+    <dt>time</dt>
+    <dd>{{tx.time}}</dd>
+  </dl>
+  <h2>inputs</h2>
+  <ul class="inputs">
+    <li ng:repeat="inp in tx.inputs">value: {{inp.prev_out.value}} address: <a href="#/addr/{{inp.prev_out.addr}}">{{inp.prev_out.addr}}</a> tag: {{inp.prev_out.addr_tag}}</li>
+  </ul>
+  <h2>outputs</h2>
+  <ul class="outputs">
+    <li ng:repeat="out in tx.out">value: {{out.value}} address: <a href="#/addr/{{out.addr}}">{{out.addr}}</a> tag: {{out.addr_tag}}</li>
+  </ul>
+</div>
