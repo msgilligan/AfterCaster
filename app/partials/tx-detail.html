@@ -1,16 +1,16 @@
 <div id="tx-detail" title="Tx Detail" shown="true">
   <dl>
     <dt>hash</dt>
-    <dd>{{tx.hash}}</dd>
+    <dd><span ng-if="tx.hash==undefined">Loading...</span>{{tx.hash}}</dd>
     <dt>index</dt>
-    <dd>{{tx.tx_index}}</dd>
+    <dd><span ng-if="tx.tx_index==undefined">Loading...</span>{{tx.tx_index}}</dd>
     <dt>time</dt>
-    <dd>{{tx.time}}</dd>
+    <dd><span ng-if="tx.time==undefined">Loading...</span>{{tx.time*1000 | date:'short'}}</dd>
   </dl>
   <h2>inputs</h2>
   <ul class="inputs">
     <li ng:repeat="inp in tx.inputs"><a class="double_line" href="#/addr/{{inp.prev_out.addr}}">
-<span class="btc">{{inp.prev_out.value}} SATOSHI</span><br/>
+<span class="btc">{{inp.prev_out.value * .00000001| number}} BTC</span><br/>
 <span ng-if="inp.prev_out.addr_tag!==undefined">{{inp.prev_out.addr_tag}}<br/></span>
 <span class='addressellipse'>{{inp.prev_out.addr}}</span>
 </a></li>
@@ -18,7 +18,7 @@
   <h2>outputs</h2>
   <ul class="outputs">
     <li ng:repeat="out in tx.out"><a class"double_line" href="#/addr/{{out.addr}}">
-<span class="btc">{{out.value}} SATOSHI<br/></span>
+<span class="btc">{{out.value * .00000001| number}} BTC<br/></span>
 <span ng-if="out.addr_tag!==undefined">{{out.addr_tag}}<br/></span>
 <span class='addressellipse'>{{out.addr}}</span>
 </a></li>

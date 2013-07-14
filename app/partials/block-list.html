@@ -1,3 +1,5 @@
 <ul id="blocks" title="Blocks" shown="true">
-  <li ng-cloak ng:repeat="block in blocks"><a href="#/block/{{block.hash}}">height:{{block.height}} time:{{block.time}}</a></li>
+  <li ng-cloak ng:repeat="block in blocks"><a href="#/block/{{block.hash}}">
+<span class="gianthash">{{block.hash}}</span>
+<br/>{{block.time*1000 | date:'short'}}</a></li>
 </ul>

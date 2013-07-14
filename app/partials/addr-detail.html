@@ -1,16 +1,16 @@
 <div id="addr-detail" title="Address Detail"  shown="true">
   <dl>
     <dt>Address</dt>
-    <dd id="text">{{addr.address}}</dd>
+    <dd id="text"><span ng-if="addr.address==undefined">Loading...</span>{{addr.address}}</dd>
     <dt id="qrlabel">QR Code</dt>
     <dd id="qrcode"></dd>
     <dt># Tx</dt>
-    <dd>{{addr.n_tx}}</dd>
+    <dd><span ng-if="addr.n_tx==undefined">Loading...</span>{{addr.n_tx}}</dd>
     <dt>Total Received</dt>
-    <dd>{{addr.total_received}}</dd>
+    <dd><span ng-if="addr.total_received==undefined">Loading...</span>{{addr.total_received}}</dd>
     <dt>Total Sent</dt>
-    <dd>{{addr.total_sent}}</dd>
+    <dd><span ng-if="addr.total_sent==undefined">Loading...</span>{{addr.total_sent}}</dd>
     <dt>Final Balance</dt>
-    <dd>{{addr.final_balance}}</dd>
+    <dd><span ng-if="addr.final_balance==undefined">Loading...</span>{{addr.final_balance}}</dd>
   </dl>
 </div>
