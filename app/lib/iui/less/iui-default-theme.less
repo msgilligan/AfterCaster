@@ -1,0 +1,99 @@
+/* default-theme.css (c) 2007-2012 by iUI Project Members, see LICENSE.txt for license */
+body,
+.navroot {
+    color: #000000;
+}
+
+li > a[selected], li > a:active {
+    background-image: url(listArrowSel.png), url(selection.png) !important;
+}
+
+li > a[selected="progress"] {
+    background-image: url(loading.gif), url(selection.png) !important;
+}
+
+/************************************************************************************************/
+
+body > .toolbar,
+.navroot > .toolbar{
+    background: #f8f8f8;
+}
+
+.button {
+}
+
+.blueButton {
+}
+
+#backButton {
+    background: 0 5px url(themes/seven/images/backbutton.png) no-repeat;
+    padding-left: 20px;
+    background-size: 12px;
+}
+
+#backButton:active {
+}
+
+.whiteButton {
+}
+
+.redButton {
+}
+
+.grayButton {
+}
+
+/************************************************************************************************/
+
+body > ul > li.group {
+}
+
+body > ul > li > a,
+.navroot > ul > li > a{
+    background: url(themes/seven/images/rightarrow.png) no-repeat 98% center;
+    background-size: 8px;
+}
+
+/************************************************************************************************/
+    
+.dialog > fieldset {
+}
+
+/************************************************************************************************/
+
+body > .panel 
+.navroot > .panel{
+    background: #e5e5e5;
+}
+
+.toggle {
+  background: url(themes/seven/images/toggleoff.png) no-repeat 98% center;
+  background-size: 41px;
+}
+
+.toggle[toggled="true"] {
+  background: url(themes/seven/images/toggleon.png) no-repeat 98% center;
+  background-size: 41px;
+}
+
+.thumb {
+}
+
+/************************************************************************************************/
+#preloader {
+    display: none;
+    background-image: url(loading.gif), url(backButtonSel.png), url(selection.png),
+        url(blueButton.png), url(listArrowSel.png), url(listArrowSel.png), url(listGroup.png);
+}
+
+.toolbar > h1.titleImg {
+  background: url(title-img.png) no-repeat top center;
+  color: rgba(0,0,0,0);
+}
+
+.backButtonImg {
+  width: 50px;
+  background: url(back-img.png) no-repeat center left,
+              url(backButtonBack.png) repeat-x top left !important;
+  color: rgba(0,0,0,0);
+}
