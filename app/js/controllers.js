@@ -26,5 +26,8 @@ angular.module('ac.controllers', ['ac.services']).
 	$scope.tx = Tx.get({hash: $routeParams.hash});
   }]).
   controller('AddrDetailCtrl', ['$scope', '$routeParams', 'Addr', function($scope, $routeParams, Addr) {
-	$scope.addr = Addr.get({addr: $routeParams.addr});
-  }]);
+	$scope.addr = Addr.get({addr: $routeParams.addr}, function(addr) {
+    var qrcode = new QRCode("qrcode");
+    qrcode.makeCode(addr.address);
+  });
+}]);
