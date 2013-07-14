@@ -3,7 +3,7 @@
 
 // Declare app level module which depends on filters, and services
 //angular.module('ac', ['ac.filters', 'ac.services', 'ac.directives', 'ac.controllers']).
-angular.module('ac', ['ac.services', 'ac.controllers']).
+angular.module('ac', ['ac.services', 'ac.controllers', 'ac.filters']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/blocks', {templateUrl: 'partials/block-list.html', controller: 'BlockListCtrl'});
     $routeProvider.when('/latest', {templateUrl: 'partials/block-list.html', controller: 'LatestBlockCtrl'});

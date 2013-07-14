@@ -2,10 +2,9 @@
 
 /* Filters */
 
-angular.module('ac.filters', []).
-  filter('btc_convert',function(){
+angular.module('ac.filters', []).filter('hashtruncat',function(){
     return function(input){
-      return input*.00000001
+      var th = input.replace(/^0+/, '');
+      return th.substring(0,12)+'...'+th.slice(-12);
     };
-  };
-);
+  });
