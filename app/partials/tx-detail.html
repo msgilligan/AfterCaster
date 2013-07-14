@@ -9,10 +9,20 @@
   </dl>
   <h2>inputs</h2>
   <ul class="inputs">
-    <li ng:repeat="inp in tx.inputs">value: {{inp.prev_out.value}} address: <a href="#/addr/{{inp.prev_out.addr}}">{{inp.prev_out.addr}}</a> tag: {{inp.prev_out.addr_tag}}</li>
+    <li ng:repeat="inp in tx.inputs"><a class="double_line" href="#/addr/{{inp.prev_out.addr}}">
+{{inp.prev_out.value}} BTC
+<span ng-if="inp.prev_out.addr_tag!==undefined">tag: {{inp.prev_out.addr_tag}}</span>
+address:
+<span class='addressellipse'>{{inp.prev_out.addr}}</span>
+</a></li>
   </ul>
   <h2>outputs</h2>
   <ul class="outputs">
-    <li ng:repeat="out in tx.out">value: {{out.value}} address: <a href="#/addr/{{out.addr}}">{{out.addr}}</a> tag: {{out.addr_tag}}</li>
+    <li ng:repeat="out in tx.out"><a class"double_line" href="#/addr/{{out.addr}}">
+{{out.value}} BTC
+<span ng-if="out.addr_tag!==undefined">tag: {{out.addr_tag}}</span>
+address: 
+<span class='addressellipse'>{{out.addr}}</span>
+</a></li>
   </ul>
 </div>
