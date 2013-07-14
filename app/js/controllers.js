@@ -49,7 +49,7 @@ angular.module('ac.controllers', ['ac.services']).
     $scope.$on('$routeChangeStart', function(scope, next, current) {
     });
     $scope.bbClick = function() {
- 	   $rootScope.slideAnim = "'slideright'";
+ 	   $rootScope.slideAnim = "'slideleft'";
        $location.path("/blocks");
     };
   }]);
