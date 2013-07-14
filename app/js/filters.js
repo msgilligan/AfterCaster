@@ -3,8 +3,9 @@
 /* Filters */
 
 angular.module('ac.filters', []).
-  filter('interpolate', ['version', function(version) {
-    return function(text) {
-      return String(text).replace(/\%VERSION\%/mg, version);
-    }
-  }]);
+  filter('btc_convert',function(){
+    return function(input){
+      return input*.00000001
+    };
+  };
+);
