@@ -29,5 +29,15 @@ angular.module('ac.controllers', ['ac.services']).
 	$scope.addr = Addr.get({addr: $routeParams.addr}, function(addr) {
     var qrcode = new QRCode("qrcode");
     qrcode.makeCode(addr.address);
-  });
-}]);
+    });
+  }]).
+  controller('IUINavCtrl', ['$rootScope', '$scope', function($rootScope, $scope) {
+	$rootScope.slideAnim = "'slideleft'";
+    $scope.$on('$routeChangeStart', function(scope, next, current) {
+        var backwards = false;
+        if (next.$$route.templateUrl == "partials/block-list.html") {
+            backwards = true;
+        }
+	    $rootScope.slideAnim = backwards ? "'slideright'" : "'slideleft'";
+    });
+  }]);
