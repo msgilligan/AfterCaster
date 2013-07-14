@@ -13,7 +13,6 @@ body {
     -webkit-text-size-adjust: none;
 }
 
-body > *:not(.toolbar),
 .navroot > *:not(.toolbar){
     display: none;
     position: absolute;
@@ -30,15 +29,12 @@ body > *:not(.toolbar),
     border-top: 1px solid #B7B7B7;
 }
 
-body.landscape > *:not(.toolbar),
 body.landscape .navroot > *:not(.toolbar){
     height: auto;
     min-height: 400px;
     z-index:15;
 }
 
-body > *[selected="true"],
-body > *[shown="true"],
 .navroot > *[shown="true"] {
     display: block;
 }
