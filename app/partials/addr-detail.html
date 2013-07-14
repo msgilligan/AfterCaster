@@ -1,7 +1,7 @@
 <div id="addr-detail" title="Address Detail"  shown="true">
   <dl>
     <dt>Address</dt>
-    <dd id="text"><span ng-if="addr.address==undefined">Loading...</span>{{addr.address}}</dd>
+    <dd id="text"><span ng-if="addr.address==undefined">Loading...</span>{{addr.address | hashtruncat}}</dd>
     <dt id="qrlabel">QR Code</dt>
     <dd id="qrcode"></dd>
     <dt># Tx</dt>
