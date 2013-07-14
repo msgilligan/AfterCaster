@@ -9,6 +9,7 @@ angular.module('ac.controllers', ['ac.services']).
 	    for(var i=0; i<bc.blocks.length; i++) {
 	        $scope.blocks.push(bc.blocks[i]);
 	    } 
+ 	   $rootScope.slideAnim = "'slideleft'";
 	}, function() {
 	});
   }]).
@@ -34,10 +35,21 @@ angular.module('ac.controllers', ['ac.services']).
   controller('IUINavCtrl', ['$rootScope', '$scope', function($rootScope, $scope) {
 	$rootScope.slideAnim = "'slideleft'";
     $scope.$on('$routeChangeStart', function(scope, next, current) {
-        var backwards = false;
-        if (next.$$route.templateUrl == "partials/block-list.html") {
-            backwards = true;
-        }
-	    $rootScope.slideAnim = backwards ? "'slideright'" : "'slideleft'";
+//        var backwards = false;
+//        if (next.$$route.templateUrl == "partials/block-list.html") {
+//            backwards = true;
+//        }
+//	    $rootScope.slideAnim = backwards ? "'slideright'" : "'slideleft'";
     });
+  }]).
+  controller('IUIToolbarCtrl', ['$rootScope', '$scope', '$location', function($rootScope, $scope, $location) {
+    $scope.title = "AfterCaster";
+    $scope.bbTitle = "Back";
+    $scope.bbClass = "button show";
+    $scope.$on('$routeChangeStart', function(scope, next, current) {
+    });
+    $scope.bbClick = function() {
+ 	   $rootScope.slideAnim = "'slideright'";
+       $location.path("/blocks");
+    };
   }]);

@@ -8,9 +8,9 @@
   <script src="lib/less/less.js" type="text/javascript"></script>
 </head>
 <body ng-controller="IUINavCtrl">
-  <div class="toolbar">
-      <h1 id="pageTitle">AfterCaster</h1>
-      <a id="backButton" class="button" href="#"></a>
+  <div class="toolbar" ng-controller="IUIToolbarCtrl">
+      <h1 id="pageTitle">{{title}}</h1>
+      <a id="backButton" ng-class="bbClass" href="#" ng-click="bbClick()">{{bbTitle}}</a>
 <!--      <a class="button" href="#searchForm">Search</a>  -->
   </div>
   <div ng-view class="navroot" ng-animate="{{slideAnim}}"></div>
