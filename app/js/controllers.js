@@ -3,7 +3,10 @@
 /* Controllers */
 
 angular.module('ac.controllers', ['ac.services']).
-  controller('BlockListCtrl', ['$scope', 'Block', function($scope, Block) {
+  controller('BlockListCtrl', ['$rootScope', '$scope', 'Block', function($rootScope, $scope, Block) {
+    $rootScope.title = "Blocks";
+    $rootScope.bbTitle = null;
+    $rootScope.bbClass = "button";
     $scope.blocks = [];
 	$scope.blockchain = Block.query([], function(bc) {
 	    for(var i=0; i<bc.blocks.length; i++) {
@@ -13,20 +16,32 @@ angular.module('ac.controllers', ['ac.services']).
 	}, function() {
 	});
   }]).
-  controller('LatestBlockCtrl', ['$scope', 'Block', function($scope, Block) {
+  controller('LatestBlockCtrl', ['$rootScope', '$scope', 'Block', function($rootScope, $scope, Block) {
+    $rootScope.title = "Latest Block";
+    $rootScope.bbTitle = "Back";
+    $rootScope.bbClass = "button show";
     $scope.blocks = [];
 	$scope.latest = Block.latest([], function(block) {
 	    $scope.blocks.push(block);
 	}, function() {
 	});
   }]).
-  controller('BlockDetailCtrl', ['$scope', '$routeParams', 'Block', function($scope, $routeParams, Block) {
+  controller('BlockDetailCtrl', ['$rootScope', '$scope', '$routeParams', 'Block', function($rootScope, $scope, $routeParams, Block) {
+    $rootScope.title = "Block Info";
+    $rootScope.bbTitle = "Back";
+    $rootScope.bbClass = "button show";
 	$scope.block = Block.get({hash: $routeParams.hash});
   }]).
-  controller('TxDetailCtrl', ['$scope', '$routeParams', 'Tx', function($scope, $routeParams, Tx) {
+  controller('TxDetailCtrl', ['$rootScope', '$scope', '$routeParams', 'Tx', function($rootScope, $scope, $routeParams, Tx) {
+    $rootScope.title = "Tx Info";
+    $rootScope.bbTitle = "Back";
+    $rootScope.bbClass = "button show";
 	$scope.tx = Tx.get({hash: $routeParams.hash});
   }]).
-  controller('AddrDetailCtrl', ['$scope', '$routeParams', 'Addr', function($scope, $routeParams, Addr) {
+  controller('AddrDetailCtrl', ['$rootScope', '$scope', '$routeParams', 'Addr', function($rootScope, $scope, $routeParams, Addr) {
+    $rootScope.title = "Address (Wallet)";
+    $rootScope.bbTitle = "Back";
+    $rootScope.bbClass = "button show";
 	$scope.addr = Addr.get({addr: $routeParams.addr}, function(addr) {
     var qrcode = new QRCode("qrcode");
     qrcode.makeCode(addr.address);
@@ -43,9 +58,9 @@ angular.module('ac.controllers', ['ac.services']).
     });
   }]).
   controller('IUIToolbarCtrl', ['$rootScope', '$scope', '$location', function($rootScope, $scope, $location) {
-    $scope.title = "AfterCaster";
-    $scope.bbTitle = "Back";
-    $scope.bbClass = "button show";
+//    $rootScope.title = "AfterCaster";
+//    $rootScope.bbTitle = "Back";
+//    $rootScope.bbClass = "button show";
     $scope.$on('$routeChangeStart', function(scope, next, current) {
     });
     $scope.bbClick = function() {
