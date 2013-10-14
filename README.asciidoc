@@ -1,4 +1,3 @@
-AfterCaster
-===========
+= AfterCaster
 
-The opposite of a forecast
+The opposite of a forecast.
