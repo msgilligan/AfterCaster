@@ -1,3 +1,14 @@
 = AfterCaster
 
 The opposite of a forecast.
+
+AfterCaster is a Bitcoin Block Chain viewer that lets you see economic transactions *after* they have occured.
+
+It uses the BlockChain.info API (although the current code snapshot and the demo are using static JSON files captured from that API)
+
+It is using a preliminary version of the http://www.iui-js.org[iUI] iOS 7 influenced theme and is using a preliminary version of iUI http://angularjs.org[AngularJS] integration.
+
+== Demo
+
+The app is running on a http://www.cloudbees.com/[CloudBees] free instance at http://aftercaster.iui.cloudbees.net/[aftercaster.iui.cloudbees.net] (Since it is a free instance give it a minute to warm up when you first hit it.)
+
