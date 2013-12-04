@@ -2,7 +2,7 @@
 
 AfterCast:: The opposite of a forecast.
 
-AfterCaster is a Bitcoin Block Chain viewer that lets you see economic transactions *after* they have occured.
+AfterCaster is a http://bitcoin.org[Bitcoin] https://en.bitcoin.it/wiki/Block_chain[Block Chain] viewer that lets you see economic transactions *after* they have occured.
 
 It uses the http://blockchain.info/api[BlockChain.info API] (although the current code snapshot and the demo are using static JSON files captured from that API)
 
