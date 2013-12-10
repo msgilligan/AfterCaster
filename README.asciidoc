@@ -12,3 +12,13 @@ It is using a preliminary version of the http://www.iui-js.org[iUI] iOS 7 influe
 
 The app is running on a http://www.cloudbees.com/[CloudBees] free instance at http://aftercaster.iui.cloudbees.net/[aftercaster.iui.cloudbees.net] (Since it is a free instance give it a minute to warm up when you first hit it.)
 
+== To Do
+
+. Fix browser console errors
+.. 404's for .png files
+.. Error message from +{{block.hash | exhashtruncat}}+
+. Better iUI / Angular integration
+.. Left slide for forward, Right slide for back
+.. Use iUI navigation stack
+. Upgrade to latest Node.js (or Spring Boot?)
+. Minification of JS/CSS, etc.
