@@ -16,7 +16,6 @@ The app is running on a http://www.cloudbees.com/[CloudBees] free instance at ht
 
 . Fix browser console errors
 .. 404's for .png files
-.. Error message from +{{block.hash | exhashtruncat}}+
 . Better iUI / Angular integration
 .. Left slide for forward, Right slide for back
 .. Use iUI navigation stack
